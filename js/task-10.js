@@ -23,12 +23,19 @@ function createBoxes(amount) {
     divEl.style.width = boxSize + 'px';
     divEl.style.height = boxSize + 'px';
     divEl.style.backgroundColor = getRandomHexColor();
-    divEl.style.marginBottom = 10 + 'px';
+    divEl.style.marginTop = 5 + 'px';
+    divEl.style.marginBottom = 5 + 'px';
+    // console.log(divEl.style.backgroundColor);
     divWraper.append(divEl);
   }
   boxesContainerEl.append(divWraper);
 }
 
 function destroyBoxes() {
-  boxes.innerHTML = "";
+  boxesContainerEl.innerHTML = "";
+  clearInput();
+}
+
+function clearInput() {
+  document.querySelector('#controls > input').value = '';
 }
